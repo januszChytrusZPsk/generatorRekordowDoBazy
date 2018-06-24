@@ -1,0 +1,5 @@
+load data
+infile 'jobs.csv'
+append into table JOB
+fields terminated by ','
+(ID,COMPANY_INFO,FROM_DATE,SALARY,TO_DATE,APP_USER_ID)

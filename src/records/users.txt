@@ -1,0 +1,5 @@
+load data
+infile 'users.csv'
+append into table APP_USER
+fields terminated by ','
+(ID,BUILDING,CITY,COUNTRY,POSTCODE,STREET,DATE_OF_BIRTH,NAM,PASSWORD,SURNAME,USERNAME,CURRENT_COMPANY_ID)
