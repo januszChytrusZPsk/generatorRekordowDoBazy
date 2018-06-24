@@ -138,8 +138,8 @@ public class APP_USER {
                 "" + CITY + "\",\"" +
                 "" + COUNTRY + "\",\"" +
                 "" + POSTCODE + "\",\"" +
-                "" + STREET + "\"," +
-                "" + DATE_OF_BIRTH + ",\"" +
+                "" + STREET + "\",\"" +
+                "" + DATE_OF_BIRTH + "\",\"" +
                 "" + NAME + "\",\"" +
                 "" + PASSWORD + "\",\"" +
                 "" + SURNAME + "\",\"" +

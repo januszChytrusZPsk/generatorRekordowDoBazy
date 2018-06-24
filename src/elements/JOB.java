@@ -6,14 +6,14 @@ public class JOB {
     private long ID;
     private String COMPANY_INFO;
     private Date FROM_DATE;
-    private float SALARY;
+    private long SALARY;
     private Date TO_DATE;
     private long APP_USER_ID;
 
     public JOB() {
     }
 
-    public JOB(long ID, String COMPANY_INFO, Date FROM_DATE, float SALARY, Date TO_DATE, long APP_USER_ID) {
+    public JOB(long ID, String COMPANY_INFO, Date FROM_DATE, long SALARY, Date TO_DATE, long APP_USER_ID) {
         this.ID = ID;
         this.COMPANY_INFO = COMPANY_INFO;
         this.FROM_DATE = FROM_DATE;
@@ -46,11 +46,11 @@ public class JOB {
         this.FROM_DATE = FROM_DATE;
     }
 
-    public float getSALARY() {
+    public long getSALARY() {
         return SALARY;
     }
 
-    public void setSALARY(float SALARY) {
+    public void setSALARY(long SALARY) {
         this.SALARY = SALARY;
     }
 
@@ -73,11 +73,10 @@ public class JOB {
     @Override
     public String toString() {
         return  ID +
-                ",\"" + COMPANY_INFO + "\"" +
-                "," + FROM_DATE +
+                ",\"" + COMPANY_INFO +
+                "\"," + FROM_DATE +
                 "," + SALARY +
                 "," + TO_DATE +
-                "," + APP_USER_ID +
-                '}';
+                "," + APP_USER_ID;
     }
 }

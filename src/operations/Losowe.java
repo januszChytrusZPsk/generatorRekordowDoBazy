@@ -77,8 +77,8 @@ public class Losowe {
         return (long)rnd.nextInt(4898)+102;
     }
 
-    private float genSalary(){
-        return (rnd.nextInt(1000000)+150001)/100f;
+    private long genSalary(){
+        return rnd.nextInt(3000)+1500;
     }
 
     private String genStreet(){

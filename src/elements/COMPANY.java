@@ -113,14 +113,14 @@ public class COMPANY {
     @Override
     public String toString() {
         return  COMPANYID +
-                ",\"" + BUILDING + "\"," +
-                ",\"" + CITY + "\"" +
-                ",\"" + COUNTRY + "\"" +
-                ",\"" + POSTCODE + "\"" +
-                ",\"" + STREET + "\"" +
-                ",\"" + COMPANY_NAME + "\"" +
-                ",\"" + NIP + "\"" +
-                ",\"" + REGON + "\"" +
-                "," + OWNER_ID;
+                ",\"" + BUILDING +
+                "\",\"" + CITY +
+                "\",\"" + COUNTRY +
+                "\",\"" + POSTCODE +
+                "\",\"" + STREET +
+                "\",\"" + COMPANY_NAME +
+                "\",\"" + NIP +
+                "\",\"" + REGON +
+                "\"," + OWNER_ID;
     }
 }
