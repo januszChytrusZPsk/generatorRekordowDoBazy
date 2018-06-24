@@ -2,4 +2,4 @@ load data
 infile 'role.csv'
 append into table APP_USER_ROLES
 fields terminated by ','
-(APP_USER_ROLES,ROLES)
+(APP_USER_ID,ROLES)
