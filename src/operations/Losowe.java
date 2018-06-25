@@ -7,38 +7,32 @@ import elements.JOB;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
 public class Losowe {
 
-    private int no = 0;
     private int noComp = 0;
-    Pliki files = new Pliki();
-    APP_USER user = new APP_USER();
-    APP_USER_ROLES role = new APP_USER_ROLES();
-    JOB job = new JOB();
-    COMPANY company = new COMPANY();
-    Random rnd = new Random();
-    ArrayList<String> imiona = new ArrayList<>();
-    ArrayList<String> nazwiska = new ArrayList<>();
-    ArrayList<String> miasta = new ArrayList<>();
-    ArrayList<String> zawody = new ArrayList<>();
+    private Pliki files = new Pliki();
 
-    ArrayList<APP_USER> users = new ArrayList<>();
-    ArrayList<APP_USER_ROLES> user_roles = new ArrayList<>();
-    ArrayList<JOB> jobs = new ArrayList<>();
-    ArrayList<COMPANY> companies = new ArrayList<>();
+    private Random rnd = new Random();
+    private ArrayList<String> imiona = new ArrayList<>();
+    private ArrayList<String> nazwiska = new ArrayList<>();
+    private ArrayList<String> miasta = new ArrayList<>();
+    private ArrayList<String> zawody = new ArrayList<>();
+
+    private ArrayList<APP_USER> users = new ArrayList<>();
+    private ArrayList<APP_USER_ROLES> user_roles = new ArrayList<>();
+    private ArrayList<JOB> jobs = new ArrayList<>();
+    private ArrayList<COMPANY> companies = new ArrayList<>();
 
 
     public void generuj(){
 
         System.out.println("===GENERATOR REKORDOW===\n\n");
 
-        if(odczytajPliki());
+        if(odczytajPliki())
             System.out.println("Odczytano dane");
-
         if(tworzUserow())
             System.out.println("Wygenerowano Użytkowników");
         if(tworzRole())
@@ -51,13 +45,13 @@ public class Losowe {
         System.out.println("\n===ZAPIS DO PLIKU===");
 
         System.out.println("Zapis ról (5k rekordow)");
-        zapiszDoPlikuRole("role.csv");
+        zapiszDoPlikuRole();
         System.out.println("Sukces\nZapis prac (50k rekordow)");
-        zapiszDoPlikuJobs("jobs.csv");
+        zapiszDoPlikuJobs();
         System.out.println("Sukces\nZapis firm (100 rekordow)");
-        zapiszDoPlikuCompany("company.csv");
+        zapiszDoPlikuCompany();
         System.out.println("Sukces\nZapis użytkowników (5k rekordów)");
-        zapiszDoPlikuUsers("users.csv");
+        zapiszDoPlikuUsers();
         System.out.println("Sukces");
 
         System.out.println("=Zapisano dane do pliku=");
@@ -69,8 +63,7 @@ public class Losowe {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(first);
         calendar.add(Calendar.DAY_OF_MONTH,rnd.nextInt(120)+1);
-        Date sqlDate= new java.sql.Date(calendar.getTime().getTime());
-        return sqlDate;
+        return new Date(calendar.getTime().getTime());
     }
 
     private long genUserID(){
@@ -108,14 +101,12 @@ public class Losowe {
 
     private Date genDateJob(){
         Calendar calendar = new GregorianCalendar(rnd.nextInt(48)+1970, rnd.nextInt(12)+1, rnd.nextInt(28)+1, 9, 0, 0);
-        Date sqlDate= new java.sql.Date(calendar.getTime().getTime());
-        return sqlDate;
+        return new Date(calendar.getTime().getTime());
     }
 
     private Date genDate(){
         Calendar calendar = new GregorianCalendar(rnd.nextInt(40)+1950, rnd.nextInt(12)+1, rnd.nextInt(28)+1, 9, 0, 0);
-        Date sqlDate= new java.sql.Date(calendar.getTime().getTime());
-        return sqlDate;
+        return new Date(calendar.getTime().getTime());
     }
     private boolean odczytajPliki(){
         try {
@@ -129,7 +120,7 @@ public class Losowe {
         return true;
     }
 
-    public String genPostCode(){
+    private String genPostCode(){
         int front = rnd.nextInt(100);
         int back = rnd.nextInt(1000);
         String postCode;
@@ -161,40 +152,40 @@ public class Losowe {
         return "Firma nr" + id;
     }
 
-    private void zapiszDoPlikuRole(String  nazwa){
+    private void zapiszDoPlikuRole(){
 
-        String tresc = "";
+        StringBuilder tresc = new StringBuilder();
         for (APP_USER_ROLES dane:user_roles) {
-            tresc+=dane.toString()+ "\n";
+            tresc.append(dane.toString()).append("\n");
         }
-        files.zapiszPlik(nazwa,tresc);
+        files.zapiszPlik("role.csv", tresc.toString());
     }
 
-    private void zapiszDoPlikuJobs(String nazwa){
+    private void zapiszDoPlikuJobs(){
 
-        String tresc = "";
+        StringBuilder tresc = new StringBuilder();
         for (JOB dane:jobs) {
-            tresc+=dane.toString()+ "\n";
+            tresc.append(dane.toString()).append("\n");
         }
-        files.zapiszPlik(nazwa,tresc);
+        files.zapiszPlik("jobs.csv", tresc.toString());
     }
 
-    private void zapiszDoPlikuCompany(String nazwa){
+    private void zapiszDoPlikuCompany(){
 
-        String tresc = "";
+        StringBuilder tresc = new StringBuilder();
         for (COMPANY dane: companies) {
-            tresc+=dane.toString()+ "\n";
+            tresc.append(dane.toString()).append("\n");
         }
-        files.zapiszPlik(nazwa,tresc);
+        files.zapiszPlik("company.csv", tresc.toString());
     }
 
-    private void zapiszDoPlikuUsers(String nazwa){
+    private void zapiszDoPlikuUsers(){
 
-        String tresc = "";
+        StringBuilder tresc = new StringBuilder();
         for (APP_USER dane:users) {
-            tresc+=dane.toString()+ "\n";
+            tresc.append(dane.toString()).append("\n");
         }
-        files.zapiszPlik(nazwa,tresc);
+        files.zapiszPlik("users.csv", tresc.toString());
     }
 
     private boolean tworzRole(){
@@ -214,7 +205,7 @@ public class Losowe {
     }
 
     private boolean tworzUserow(){
-        int i = 0;
+        int i;
         int id;
         for(i=0;i<100;i++){
             APP_USER a;
