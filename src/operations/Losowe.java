@@ -216,10 +216,9 @@ public class Losowe {
     private boolean tworzUserow(){
         int i = 0;
         int id;
-        while(i<5000){
+        for(i=0;i<100;i++){
             APP_USER a;
             id=i+1;
-            if(i>99) {
                 a = new APP_USER( id ,
                         genBudynek(),
                         genMiasto(),
@@ -232,8 +231,12 @@ public class Losowe {
                         genNazwisko(),
                         String.valueOf(id),
                         (long)id);
-            }
-            else {
+                users.add(a);
+        }
+            while (i<5000)
+            {
+                APP_USER a;
+                id=i+1;
                 a = new APP_USER( id ,
                         genBudynek(),
                         genMiasto(),
@@ -246,10 +249,9 @@ public class Losowe {
                         genNazwisko(),
                         String.valueOf(id),
                         (long)rnd.nextInt(100)+1);
+                users.add(a);
+                i++;
             }
-            users.add(a);
-            i++;
-        }
         return true;
     }
 

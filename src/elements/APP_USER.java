@@ -133,17 +133,17 @@ public class APP_USER {
 
     @Override
     public String toString(){
-        return ID + ",\"" +
-                "" + BUILDING + "\",\"" +
-                "" + CITY + "\",\"" +
-                "" + COUNTRY + "\",\"" +
-                "" + POSTCODE + "\",\"" +
-                "" + STREET + "\",\"" +
-                "" + DATE_OF_BIRTH + "\",\"" +
-                "" + NAME + "\",\"" +
-                "" + PASSWORD + "\",\"" +
-                "" + SURNAME + "\",\"" +
-                "" + USERNAME + "\"," +
+        return ID + "," +
+                "" + BUILDING + "," +
+                "" + CITY + ",'" +
+                "" + COUNTRY + "," +
+                "" + POSTCODE + "," +
+                "" + STREET + "," +
+                "" + DATE_OF_BIRTH + "," +
+                "" + NAME + "," +
+                "" + PASSWORD + "," +
+                "" + SURNAME + "," +
+                "" + USERNAME + "," +
                 "" + CURRENT_COMPANY_COMPANYID;
     }
 }

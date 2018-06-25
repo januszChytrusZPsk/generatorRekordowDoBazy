@@ -32,6 +32,6 @@ public class APP_USER_ROLES {
     @Override
     public String toString() {
         return APP_USER_ID +
-                ",\"" + ROLES + "\"";
+                "," + ROLES ;
     }
 }

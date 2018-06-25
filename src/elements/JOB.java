@@ -73,8 +73,8 @@ public class JOB {
     @Override
     public String toString() {
         return  ID +
-                ",\"" + COMPANY_INFO +
-                "\"," + FROM_DATE +
+                "," + COMPANY_INFO +
+                "," + FROM_DATE +
                 "," + SALARY +
                 "," + TO_DATE +
                 "," + APP_USER_ID;
