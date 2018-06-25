@@ -275,6 +275,8 @@ public class Losowe {
         return true;
     }
 
+
+
     private boolean tworzPrace(){
         int i = 0;
         int id;

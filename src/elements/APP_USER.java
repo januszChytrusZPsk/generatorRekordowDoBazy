@@ -11,10 +11,10 @@ public class APP_USER {
     private String STREET;
     private Date DATE_OF_BIRTH;
     private String NAME;
-    private String PASSWORD = "password";
+    private String PASSWORD;
     private String SURNAME;
     private String USERNAME;
-    private long CURRENT_COMPANY_ID;
+    private long CURRENT_COMPANY_COMPANYID;
 
     public APP_USER() {
     }
@@ -24,7 +24,7 @@ public class APP_USER {
                     String POSTCODE, String STREET,
                     Date DATE_OF_BIRTH, String NAME,
                     String PASSWORD, String SURNAME,
-                    String USERNAME, Long CURRENT_COMPANY_ID){
+                    String USERNAME, Long CURRENT_COMPANY_COMPANYID){
         this.ID = ID;
         this.BUILDING = BUILDING;
         this.CITY = CITY;
@@ -36,7 +36,7 @@ public class APP_USER {
         this.PASSWORD = PASSWORD;
         this.SURNAME = SURNAME;
         this.USERNAME = USERNAME;
-        this.CURRENT_COMPANY_ID = CURRENT_COMPANY_ID;
+        this.CURRENT_COMPANY_COMPANYID = CURRENT_COMPANY_COMPANYID;
     }
 
     public long getID() {
@@ -123,12 +123,12 @@ public class APP_USER {
         this.USERNAME = USERNAME;
     }
 
-    public long getCURRENT_COMPANY_ID() {
-        return CURRENT_COMPANY_ID;
+    public long getCURRENT_COMPANY_COMPANYID() {
+        return CURRENT_COMPANY_COMPANYID;
     }
 
-    public void setCURRENT_COMPANY_ID(long CURRENT_COMPANY_ID) {
-        this.CURRENT_COMPANY_ID = CURRENT_COMPANY_ID;
+    public void setCURRENT_COMPANY_COMPANYID(long CURRENT_COMPANY_COMPANYID) {
+        this.CURRENT_COMPANY_COMPANYID = CURRENT_COMPANY_COMPANYID;
     }
 
     @Override
@@ -144,6 +144,6 @@ public class APP_USER {
                 "" + PASSWORD + "\",\"" +
                 "" + SURNAME + "\",\"" +
                 "" + USERNAME + "\"," +
-                "" + CURRENT_COMPANY_ID;
+                "" + CURRENT_COMPANY_COMPANYID;
     }
 }

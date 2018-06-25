@@ -16,7 +16,7 @@ public class COMPANY {
     public COMPANY() {
     }
 
-    public COMPANY(long COMPANYID, String BUILDING, String CITY, String COUNTRY, String POSTCODE, String STREET, String COMPANY_NAME, String NIP, String REGON, long OWNER_ID) {
+    public COMPANY(long COMPANYID, String BUILDING, String CITY, String COUNTRY, String POSTCODE, String STREET, String COMPANY_NAME, String NIP, String REGON,long OWNER_ID) {
         this.COMPANYID = COMPANYID;
         this.BUILDING = BUILDING;
         this.CITY = CITY;
@@ -26,7 +26,7 @@ public class COMPANY {
         this.COMPANY_NAME = COMPANY_NAME;
         this.NIP = NIP;
         this.REGON = REGON;
-        this.OWNER_ID =OWNER_ID;
+        this.OWNER_ID = OWNER_ID;
     }
 
     public long getOWNER_ID() {
