@@ -1,5 +1,0 @@
-load data
-infile 'company.csv'
-append into table COMPANY
-fields terminated by ','
-(COMPANYID,BUILDING,CITY,COUNTRY,POSTCODE,STREET,COMPANY_NAME,NIP,REGON)
